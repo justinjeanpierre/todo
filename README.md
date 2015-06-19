@@ -1,2 +1,2 @@
 # todo
-Single-page to-do application.
+A single-page to-do application built with Node.js, MongoDB, and Angular.
