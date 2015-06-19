@@ -19,6 +19,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 app.use(methodOverride());
 
+// define model
+var Todo = mongoose.model('Todo', {
+	text: String
+});
+
+// listen
 var port = 8080;
 app.listen(port);
 console.log('todo listening on port ' + port);
