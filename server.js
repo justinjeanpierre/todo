@@ -24,6 +24,18 @@ var Todo = mongoose.model('Todo', {
 	text: String
 });
 
+// routes
+//  api
+app.get('/api/todos', function(req, res) {
+	Todo.find(function(err, todos) {
+		if (err) {
+			res.status(500).json({message:'error finding todos'});
+		}
+			
+		res.status(200).json(todos);
+	});
+});
+
 // listen
 var port = 8080;
 app.listen(port);
