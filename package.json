@@ -1,0 +1,33 @@
+{
+  "name": "todo",
+  "version": "0.0.1",
+  "description": "A single-page to-do application build with Node, MongoDB, and Angular.",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://justinjeanpierre@github.com/justinjeanpierre/todo.git"
+  },
+  "keywords": [
+    "node",
+    "mongo",
+    "angular",
+    "todo",
+    "single-page"
+  ],
+  "dependencies": {
+  	"express"    : "~4.7.2",
+    "mongoose"   : "~3.6.2",
+    "morgan"     : "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2"
+  },
+  "author": "Justin Jean-Pierre",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justinjeanpierre/todo/issues"
+  },
+  "homepage": "https://github.com/justinjeanpierre/todo"
+}
