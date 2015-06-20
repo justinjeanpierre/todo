@@ -24,6 +24,60 @@ var Todo = mongoose.model('Todo', {
 	text: String
 });
 
+// routes
+//  api
+
+app.get('/api/todos', function(req, res) {
+	Todo.find(function(err, todos) {
+		if (err) {
+			res.status(500).json({message:'error finding todos'});
+		}
+			
+		res.status(200).json(todos);
+	});
+});
+
+app.post('/api/todos', function(req, res) {
+	Todo.create({
+		text:req.body.text,
+		done: false
+	}, function(err, todo) {
+		if (err) {
+			res.status(500).json({message:'error creating todo'});
+		}
+		
+		Todo.find(function(err, todos) {
+			if (err) {
+				res.status(500).json({message:'error retrieving todos'});
+			}
+			
+			res.status(200).json(todos);
+		});
+	});
+});
+
+app.delete('/api/todos/:todo_id', function(req, res) {
+	Todo.remove({
+		_id:req.params.todo_id
+	}, function() {
+		if (err)
+			res.status(500).json({message:'error deleting todo'});
+			
+		Todo.find(function(err, todos) {
+			if (err) {
+				res.status(500).json({message:'error retrieving todos'});
+			}
+			
+			res.status(200).json(todos);
+		});
+	});
+});
+
+// application
+app.get("*", function(req, res) {
+	res.sendfile('./public/index.html');
+});
+
 // listen
 var port = 8080;
 app.listen(port);
