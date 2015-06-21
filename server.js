@@ -12,7 +12,7 @@ var methodOverride	= require('method-override');
 
 mongoose.connect('mongodb://localhost:27017/todo');
 
-app.use(express.static(__dirname + 'public'));
+app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
