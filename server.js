@@ -12,7 +12,7 @@ var methodOverride	= require('method-override');
 
 mongoose.connect('mongodb://localhost:27017/todo');
 
-app.use(express.static(__dirname + 'public'));
+app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
@@ -59,7 +59,7 @@ app.post('/api/todos', function(req, res) {
 app.delete('/api/todos/:todo_id', function(req, res) {
 	Todo.remove({
 		_id:req.params.todo_id
-	}, function() {
+	}, function(err, todo) {
 		if (err)
 			res.status(500).json({message:'error deleting todo'});
 			
