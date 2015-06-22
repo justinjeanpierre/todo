@@ -79,7 +79,7 @@ app.get("*", function(req, res) {
 });
 
 // listen
-var port = 8080;
+var port = 3431;
 app.listen(port);
 console.log('todo listening on port ' + port);
 
