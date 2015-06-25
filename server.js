@@ -9,8 +9,8 @@ var bodyParser	= require('body-parser');
 var methodOverride	= require('method-override');
 
 // configuration
-
-mongoose.connect('mongodb://localhost:27017/todo');
+var database = require('./config/database');
+mongoose.connect(database.url);
 
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
