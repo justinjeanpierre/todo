@@ -1,4 +1,4 @@
-// server.js
+// app.js
 
 // set up
 var express		= require('express');
@@ -23,7 +23,6 @@ app.use(methodOverride());
 require('./app/routes')(app);
 
 // listen
-var port = 3431;
-app.listen(port);
-console.log('todo listening on port ' + port);
-
+var server = app.listen(process.env.PORT || 3431, function() {
+  console.log('todo listening on port ' + server.address().port);
+});
