@@ -1,10 +1,11 @@
 {
   "name": "todo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A single-page to-do application build with Node, MongoDB, and Angular.",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start" : "node app.js"
   },
   "repository": {
     "type": "git",
